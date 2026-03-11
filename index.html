@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Courses Management Library</title>
+    <style>
+        /* Removes all borders and margins, making the app take over the entire screen */
+        body, html { 
+            margin: 0; 
+            padding: 0; 
+            height: 100vh; 
+            width: 100vw; 
+            overflow: hidden; 
+            background-color: #1a202c; /* Matches your login background */
+        }
+        iframe { 
+            border: none; 
+            width: 100%; 
+            height: 100%; 
+            display: block; 
+        }
+    </style>
+</head>
+<body>
+
+    <iframe id="appFrame" src="about:blank"></iframe>
+
+    <script>
+        // 🛑 PASTE YOUR DEPLOYED GOOGLE APPS SCRIPT URL HERE:
+        // Make sure it ends in /exec
+        const webAppUrl = 'https://script.google.com/macros/s/AKfycbzqTXiWZGVMDsOrHsTD_-AqkfAFvsAgR6vb8lrkJLt4NUKX4bAW3I15L0oulWRqp_fzkw/exec';
+        
+        // Loads the app dynamically, passing along any URL parameters
+        window.onload = () => {
+            document.getElementById('appFrame').src = webAppUrl + window.location.search;
+        };
+    </script>
+
+</body>
+</html>
